@@ -105,8 +105,8 @@ module SpreeStoreCredits::OrderDecorator
 
     def existing_credit_card_payment
       other_payments = payments.valid.not_store_credits
-      raise "Found #{other_payments.size} payments and only expected 1" if other_payments.size > 1
-      other_payments.first
+      # raise "Found #{other_payments.size} payments and only expected 1" if other_payments.size > 1
+      other_payments.last
     end
 
     def reconcile_with_credit_card(other_payment, amount)
